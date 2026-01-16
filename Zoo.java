@@ -33,29 +33,38 @@ public class Zoo {
 
     // Create 3 private instance variables of type Cage.
     // Only DECLARE them here (do not instantiate them in the declaration).
-   
-   
+    private Cage cage1;
+    private Cage cage2;
+    private Cage cage3;
     // CONSTRUCTORS
     // 1) No-arg constructor:
     //    - instantiate all 3 cages
     //    - each cage should start with a random Animal
     //    Hint: Cage() can create a random Animal by calling new Animal()
     public Zoo() {
-   
+      this.cage1 = new Cage();
+      this.cage2 = new Cage();
+      this.cage3 = new Cage();
     }
-
     // 2) Overloaded constructor:
     //    - takes 3 Animal parameters and places them into the 3 cages
     //    - must demonstrate constructor overloading and use "this." at least once
-    public Zoo(Animal a1, Animal a2, Animal a3) {
-
+    public Zoo(Animal a1, Animal a2, Animal a3) 
+    {
+      this.cage1 = new Cage(new Animal(a1.getAnimalType()));
+      this.cage2 = new Cage(new Animal(a2.getAnimalType()));
+      this.cage3 = new Cage(new Animal(a3.getAnimalType()));
     }
 
     // howManyAnimals():
     // Returns the number of Animal objects that have been created so far.
     // Hint: use a static/class variable (and likely a static accessor) in Animal.
     public int howManyAnimals() {
-      return 4;
+      int total = 0;
+      total += this.cage1.getAnimal().getAnimalsCreated();
+      total += this.cage2.getAnimal().getAnimalsCreated();
+      total += this.cage3.getAnimal().getAnimalsCreated();
+      return total;
     }
 
     // putAnimalInCage(Cage cage, Animal animal):
@@ -63,6 +72,14 @@ public class Zoo {
     // - If the Cage does NOT belong to this Zoo, do nothing and return false.
     // Note: do NOT create any new cages here.
     public boolean putAnimalInCage(Cage cage, Animal animal) {
+    // check if the cage belongs to this zoo
+    if (cage == this.cage1 || cage == this.cage2 || cage == this.cage3)
+    {
+      cage = new Cage(new Animal(animal.getAnimalType()));
+      return true;
+    }
+    // if so replace the animal and return true 
+    // if not return false
       return false;
     }
 
