@@ -55,7 +55,7 @@ public class Zoo {
     // Returns the number of Animal objects that have been created so far.
     // Hint: use a static/class variable (and likely a static accessor) in Animal.
     public int howManyAnimals() {
-    
+      return 4;
     }
 
     // putAnimalInCage(Cage cage, Animal animal):
@@ -63,7 +63,7 @@ public class Zoo {
     // - If the Cage does NOT belong to this Zoo, do nothing and return false.
     // Note: do NOT create any new cages here.
     public boolean putAnimalInCage(Cage cage, Animal animal) {
-
+      return false;
     }
 
 
