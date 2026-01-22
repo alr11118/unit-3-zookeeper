@@ -59,12 +59,11 @@ public class Zoo {
     // howManyAnimals():
     // Returns the number of Animal objects that have been created so far.
     // Hint: use a static/class variable (and likely a static accessor) in Animal.
-    public int howManyAnimals() {
-      int total = 0;
-      total += this.cage1.getAnimal().getAnimalsCreated();
+    public static int howManyAnimals() {
+      /*total += this.cage1.getAnimal().getAnimalsCreated();
       total += this.cage2.getAnimal().getAnimalsCreated();
-      total += this.cage3.getAnimal().getAnimalsCreated();
-      return total;
+      total += this.cage3.getAnimal().getAnimalsCreated();*/
+      return Animal.getAnimalsCreated();
     }
 
     // putAnimalInCage(Cage cage, Animal animal):
@@ -121,6 +120,10 @@ public class Zoo {
       System.out.println("");
       
       // Testing the Zoo class
-      
+      Zoo zoo1 = new Zoo();                                                  // Zoo with random animals and 3 cages
+      Zoo zoo2 = new Zoo(new Animal("Cow"), new Animal(), new Animal());     // Zoo with 3 cages one has a cow and the other two cages have random animals
+      System.out.println("ZOO1  \n" + zoo1);                                 // Prints zoo 1
+      System.out.println("ZOO2  \n" + zoo2);                                 // Prints zoo2
+      System.out.println("Animals created so far: " + Zoo.howManyAnimals()); // Prints the number of animals created so far
     }
 }
