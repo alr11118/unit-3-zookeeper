@@ -55,6 +55,11 @@ public class Zoo {
       this.cage2 = new Cage(new Animal(a2.getAnimalType()));
       this.cage3 = new Cage(new Animal(a3.getAnimalType()));
     }
+    
+    public Cage getCage1()
+    {
+      return this.cage1;
+    }
 
     // howManyAnimals():
     // Returns the number of Animal objects that have been created so far.
@@ -120,10 +125,14 @@ public class Zoo {
       System.out.println("");
       
       // Testing the Zoo class
-      Zoo zoo1 = new Zoo();                                                  // Zoo with random animals and 3 cages
-      Zoo zoo2 = new Zoo(new Animal("Cow"), new Animal(), new Animal());     // Zoo with 3 cages one has a cow and the other two cages have random animals
-      System.out.println("ZOO1  \n" + zoo1);                                 // Prints zoo 1
-      System.out.println("ZOO2  \n" + zoo2);                                 // Prints zoo2
-      System.out.println("Animals created so far: " + Zoo.howManyAnimals()); // Prints the number of animals created so far
+      Zoo zoo1 = new Zoo();                                                                                                        // Zoo with random animals and 3 cages
+      Zoo zoo2 = new Zoo(new Animal("Cow"), new Animal(), new Animal());                                                           // Zoo with 3 cages one has a cow and the other two cages have random animals
+      System.out.println("ZOO1  \n" + zoo1);                                                                                       // Prints zoo 1
+      System.out.println("ZOO2  \n" + zoo2);                                                                                       // Prints zoo2
+      System.out.println("Animals created so far: " + Zoo.howManyAnimals());                                                       // Prints the number of animals created so far
+      System.out.println("Changing cage 1 in zoo2: " + zoo2.putAnimalInCage(zoo2.getCage1(), new Animal("Elephant")));             // Changes the animal in cage1 for zoo2 using the same cage
+      System.out.println("ZOO2  \n" + zoo2);                                                                                       // Prints zoo2
+      System.out.println("Changing cage 1 in zoo2 using a new cage: " + zoo2.putAnimalInCage(new Cage(), new Animal("Elephant"))); // Changes the animal in cage1 for zoo2 using a ne cage 
+      System.out.println("ZOO2  \n" + zoo2);                                                                                       // Prints zoo2
     }
 }
