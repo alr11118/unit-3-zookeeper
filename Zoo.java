@@ -86,4 +86,8 @@ public class Zoo {
 
     // toString():
     // Return a multi-line description of the Zoo including each cage (and the animal inside).
+    public String toString()
+    {
+      return("Cage 1: " + this.cage1 + "\n" + "cage 2: " + this.cage2 + "\n" + "Cage 3: " + this.cage3);
+    }
 }
