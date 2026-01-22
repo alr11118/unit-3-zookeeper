@@ -21,9 +21,9 @@ public class Animal {
     }
     // Create a getter/accessor method that returns the static variable that counts how many
     // animals have been instatiated
-    public int getAnimalsCreated()
+    public static int getAnimalsCreated()
     {
-      return this.animalsCreated;
+      return animalsCreated;
     }
     // Create a getter/accessor method for returning the animal type
     public String getAnimalType()

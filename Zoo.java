@@ -90,4 +90,22 @@ public class Zoo {
     {
       return("Cage 1: " + this.cage1 + "\n" + "cage 2: " + this.cage2 + "\n" + "Cage 3: " + this.cage3);
     }
+    
+    
+    
+    public static void main(String[] args)
+    {
+      // Testing Animal class
+      System.out.println("Animals created: " + Animal.getAnimalsCreated()); // Print the number of animals created
+      Animal animal1 = new Animal();                                        // Make new animal with random animal type
+      Animal animal2 = new Animal("Duck");                                  // Make new animal of Duck animal typw
+      System.out.println("Animals created: " + Animal.getAnimalsCreated()); // Print the number of animals created
+      System.out.println("Animal 1 speaks: " + animal1.speak());            // Make animal 1 speak and print the returned string
+      System.out.println("Animal 2 speakes: " + animal2.speak());           // Make animal 2 speak and print the returned string
+      animal2.setAnimalType("Cow");                                         // Set Animal 2 to cow
+      System.out.println("Animal 2 after being changed to Cow speaks backwards: " + animal2.speadBackward()); // Make animal 1 speak backwards after changing its type to Cow
+      System.out.println("ANIMAL1  " + animal1);                            // Print Animal 1
+      System.out.println("ANIMAL2  " + animal2);                            // Print Animal 2
+           
+    }
 }
