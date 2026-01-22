@@ -106,6 +106,21 @@ public class Zoo {
       System.out.println("Animal 2 after being changed to Cow speaks backwards: " + animal2.speadBackward()); // Make animal 1 speak backwards after changing its type to Cow
       System.out.println("ANIMAL1  " + animal1);                            // Print Animal 1
       System.out.println("ANIMAL2  " + animal2);                            // Print Animal 2
-           
+      
+      System.out.println("");
+      
+      // Testing Cage Class 
+      Cage cage1 = new Cage();                                              // Make a Cage with a random animal in it
+      Cage cage2 = new Cage(new Animal("Duck"));                            // Make a cage with a duck anmal in it
+      System.out.println("CAGE1  " + cage1);                                // Print out cage1
+      System.out.println("CAGE2  " + cage2);                                // Print out cage2
+      System.out.println("The animal in cage two: " + cage2.getAnimal());   // Print the animal in cage2
+      cage2.setAnimal(new Animal("Cow"));                                   // Cahnge the animal in cage2 to a Cow
+      System.out.println("The animal in cage two: " + cage2.getAnimal());   // Print the animal in cage2
+      
+      System.out.println("");
+      
+      // Testing the Zoo class
+      
     }
 }
