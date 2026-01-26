@@ -24,7 +24,7 @@ public class Cage {
     // Write a Setter/Mutator for editing the Animal instance variable
     public void setAnimal(Animal newAnimal)
     {
-      this.animal = new Animal(newAnimal.getAnimalType());
+      this.animal = newAnimal;
     }
     // toString():
     // - Friendly cage description including the animal.

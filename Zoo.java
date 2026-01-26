@@ -79,7 +79,7 @@ public class Zoo {
     // check if the cage belongs to this zoo
     if (cage == this.cage1 || cage == this.cage2 || cage == this.cage3)
     {
-      cage = new Cage(new Animal(animal.getAnimalType()));
+      cage.setAnimal(animal); // = new Cage(new Animal(animal.getAnimalType()));
       return true;
     }
     // if so replace the animal and return true 
